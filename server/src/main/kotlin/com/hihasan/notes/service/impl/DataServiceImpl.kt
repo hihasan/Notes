@@ -42,16 +42,17 @@ class DataServiceImpl(dataRepository: DataRepository) : DataService {
         val notes : Page<DataEntity> = dataRepository.findAll(pageable)
 
         //get All List Content
-        val listOfNotes : List<DataEntity> = notes.content
 
+        //get Content from page object
+        val listOfPosts: List<DataEntity> = notes.content
 
-        val content : List<DataDto> = listOfNotes.stream()
-            .map { mapDtoToEntity(data = DataEntity()) }
-            .collect(Collectors.toList())
+        val content = listOfPosts.stream()
+            .map { post: DataEntity -> mapDtoToEntity(post) }
+            .collect(Collectors.toList<Any>())
 
         val noteResponse = PostResponse()
 
-        noteResponse.content = content
+        noteResponse.content = content as List<DataDto>?
         noteResponse.pageNo = notes.number
         noteResponse.pasgeSize = notes.size
         noteResponse.totalElements = notes.totalElements
