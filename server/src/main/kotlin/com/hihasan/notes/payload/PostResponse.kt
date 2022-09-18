@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-data class PostResponse(
-    val content : List<DataDto>,
-    val pageNo : Integer,
-    val pasgeSize : Integer,
-    val totalElements : Long,
-    val totalPages : Integer,
-    val last : Boolean
-)
+class PostResponse{
+    var content : List<DataDto> ?= null
+    var pageNo : Int ?= null
+    var pasgeSize : Int ?= null
+    var totalElements : Long ?= null
+    var totalPages : Int ?= null
+    var last : Boolean ?= null
+}

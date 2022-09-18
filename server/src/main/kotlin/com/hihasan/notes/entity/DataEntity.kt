@@ -13,15 +13,17 @@ import javax.persistence.*
 @Table(
     name = "tbl_notes"
 )
-data class DataEntity (
+class DataEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    var id: Long?=null
 
     @Column(name = "col_title", nullable = false)
-    val title : String,
+    var title : String?= null
 
     @Column(name = "col_notes", nullable = false)
-    val notes: String
+    var notes: String?=null
 
-)
+
+
+}
