@@ -21,7 +21,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.hihasan.notes.MainActivity
+import com.hihasan.notes.views.MainActivity
 import com.hihasan.notes.constant.ApplicationConstants
 import com.hihasan.notes.constant.DatabaseConstants
 import com.hihasan.notes.utils.App
