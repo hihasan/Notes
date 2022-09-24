@@ -10,7 +10,17 @@
         android:name="com.hihasan.notes.views.notes.NoteFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_note_list">
-
+        <action
+            android:id="@+id/action_note_to_create"
+            app:destination="@id/createNoteFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createNoteFragment"
+        android:name="com.hihasan.notes.views.notes.CreateNoteFragment"
+        tools:layout="@layout/fragment_create_note">
+        <action
+            android:id="@+id/action_create_note_to_notes"
+            app:destination="@id/noteFragment"/>
     </fragment>
 <!--    <fragment-->
 <!--        android:id="@+id/SecondFragment"-->
